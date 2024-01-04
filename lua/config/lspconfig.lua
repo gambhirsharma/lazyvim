@@ -1,5 +1,69 @@
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 local lspconfig = require("lspconfig")
 
+-- Front-End #####################################################################
+
+-- Emmet
+lspconfig.emmet_language_server.setup({
+  filetypes = {
+    "css",
+    "eruby",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "less",
+    "sass",
+    "scss",
+    "svelte",
+    "pug",
+    "typescriptreact",
+    "vue",
+  },
+  -- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).
+  -- **Note:** only the options listed in the table are supported.
+  init_options = {
+    --- @type string[]
+    excludeLanguages = {},
+    --- @type string[]
+    extensionsPath = {},
+    --- @type table<string, any> [Emmet Docs](https://docs.emmet.io/customization/preferences/)
+    preferences = {},
+    --- @type boolean Defaults to `true`
+    showAbbreviationSuggestions = true,
+    --- @type "always" | "never" Defaults to `"always"`
+    showExpandedAbbreviation = "always",
+    --- @type boolean Defaults to `false`
+    showSuggestionsAsSnippets = false,
+    --- @type table<string, any> [Emmet Docs](https://docs.emmet.io/customization/syntax-profiles/)
+    syntaxProfiles = {},
+    --- @type table<string, string> [Emmet Docs](https://docs.emmet.io/customization/snippets/#variables)
+    variables = {},
+  },
+})
+
+-- CSS lsp
+lspconfig.cssls.setup({
+  capabilities = capabilities,
+  filetypes = { "html", "css", "scss", "less" },
+  cmd = { "vscode-css-language-server", "--stdio" },
+  root_dir = lspconfig.util.root_pattern("package.json", ".git"),
+  settings = {
+    css = {
+      validate = true,
+    },
+    less = {
+      validate = true,
+    },
+    scss = {
+      validate = true,
+    },
+  },
+  single_file_support = true,
+})
+
+-- Tailwindcss
 lspconfig.tailwindcss.setup({
   cmd = { "tailwindcss-language-server", "--stdio" },
   filetypes = {
@@ -89,16 +153,7 @@ lspconfig.tailwindcss.setup({
   },
 })
 
--- #########################################################################################################################
--- adding tsserver
--- local function organize_imports()
---   local params = {
---     command = "_typescript.organizeImports",
---     arguments = { vim.api.nvim_buf_get_name(0) },
---   }
---   vim.lsp.buf.execute_command(params)
--- end
-
+-- Typescript
 lspconfig.tsserver.setup({
   cmd = { "typescript-language-server", "--stdio" },
   filetypes = {
@@ -123,16 +178,36 @@ lspconfig.tsserver.setup({
   --   },
   -- },
 })
---
-
--- adding rust-analyser
-lspconfig.rust_analyzer.setup({
-  -- on_attach = on_attach,
-  -- capabilities = capabilities,
-  filetypes = { "rust" },
-  root_dir = lspconfig.util.root_pattern("Cargo.toml"),
+-- HTML
+lspconfig.html.setup({
+  cmd = { "vscode-html-language-server", "--stdio" },
+  filetypes = { "html" },
+  init_options = {
+  configurationSection = { "html", "css", "javascript" },
+  embeddedLanguages = {
+    css = true,
+    javascript = true
+  },
+  provideFormatter = true
+},
+  single_file_support = true
 })
 
+-- HTMX
+lspconfig.htmx.setup({
+  cmd = { "htmx-lsp" },
+  filetypes = { "html" },
+  single_file_support = true,
+})
+--#################################################################################
+
+-- Rust
+lspconfig.rust_analyzer.setup({
+  cmd = { "rust-analyzer" },
+  filetypes = { "rust" },
+  root_dir = lspconfig.util.root_pattern("Cargo.toml", "rust-project.json"),
+  single_file_support = true,
+})
 --
 
 -- adding clangd config
@@ -144,48 +219,38 @@ lspconfig.clangd.setup({
   -- capabilities = capabilities,
 })
 
--- ememt-lsp config
-lspconfig.emmet_language_server.setup({
-  filetypes = {
-    "css",
-    "eruby",
-    "html",
-    "javascript",
-    "javascriptreact",
-    "less",
-    "sass",
-    "scss",
-    "svelte",
-    "pug",
-    "typescriptreact",
-    "vue",
-  },
-  -- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).
-  -- **Note:** only the options listed in the table are supported.
-  init_options = {
-    --- @type string[]
-    excludeLanguages = {},
-    --- @type string[]
-    extensionsPath = {},
-    --- @type table<string, any> [Emmet Docs](https://docs.emmet.io/customization/preferences/)
-    preferences = {},
-    --- @type boolean Defaults to `true`
-    showAbbreviationSuggestions = true,
-    --- @type "always" | "never" Defaults to `"always"`
-    showExpandedAbbreviation = "always",
-    --- @type boolean Defaults to `false`
-    showSuggestionsAsSnippets = false,
-    --- @type table<string, any> [Emmet Docs](https://docs.emmet.io/customization/syntax-profiles/)
-    syntaxProfiles = {},
-    --- @type table<string, string> [Emmet Docs](https://docs.emmet.io/customization/snippets/#variables)
-    variables = {},
+-- python
+lspconfig.pyright.setup({
+  cmd = { "pyright-langserver", "--stdio" },
+  filetypes = { "python" },
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        diagnosticMode = "openFilesOnly",
+        useLibraryCodeForTypes = true,
+      },
+    },
   },
 })
-
--- css lsp
--- lspconfig.cssls.setup({ on_attach = on_attach, capabilities = capabilities, filetypes = { "css", "scss", "less" } })
 
 --elixier config
 lspconfig.elixirls.setup({
   filetypes = { "elixir", "eelixir", "heex", "surface" },
+})
+
+-- lua
+lspconfig.lua_ls.setup({
+  cmd = { "lua-language-server" },
+  filetypes = { "lua" },
+  root_dir = lspconfig.util.root_pattern(
+    ".luarc.json",
+    ".luarc.jsonc",
+    ".luacheckrc",
+    ".stylua.toml",
+    "stylua.toml",
+    "selene.toml",
+    "selene.yml",
+    ".git"
+  ),
 })
