@@ -6,14 +6,16 @@ return {
   --tokyonight colorscheme
   {
     "folke/tokyonight.nvim",
-    lazy = true,
+    name = "tokyonight",
+    lazy = false,
     --  opts = { style = "moon" },
   },
 
   -- catppuccin-mocha colorscheme
   {
     "catppuccin/nvim",
-    lazy = true,
+    lazy = false,
+    name = "catppuccin",
     -- opts = { style = "mocha",
     opts = {
       transparent = true,
@@ -71,10 +73,10 @@ return {
   -- Gruvbox colorscheme
   {
     "ellisonleao/gruvbox.nvim",
-    lazy = true,
-    -- event = 'User ColorSchemeLoad'
+    name = "gruvbox",
+    priority = 1000,
+    lazy = false,
     config = function()
-      -- Default options:
       require("gruvbox").setup({
         terminal_colors = true, -- add neovim terminal colors
         undercurl = true,
@@ -99,16 +101,14 @@ return {
         dim_inactive = false,
         transparent_mode = true,
       })
-      -- vim.cmd("colorscheme gruvbox")
     end,
   },
   {
     "lunarvim/horizon.nvim",
+    name = "horizon",
     lazy = true,
-    priority = 1000,
-    event = "User ColorSchemeLoad",
     opts = function()
-      return { transparent = true }
+      require("horizon").setup()
     end,
   },
 
@@ -116,13 +116,12 @@ return {
   {
     "craftzdog/solarized-osaka.nvim",
     name = "solarized-osaka",
-    lazy = true,
-    priority = 1000,
-    event = "User ColorSchemeLoad",
+    lazy = false,
+    -- priority = 1000,
     opts = function()
-      return {
+      require("solarized-osaka").setup({
         transparent = true,
-      }
+      })
     end,
   },
   -- kanagawa
@@ -130,9 +129,8 @@ return {
     "rebelot/kanagawa.nvim",
     lazy = false,
     name = "kanagawa.nvim",
-    priority = 1000,
+    -- priority = 1000,
     config = function()
-      -- Default options:
       require("kanagawa").setup({
         compile = false, -- enable compiling the colorscheme
         undercurl = true, -- enable undercurls
@@ -157,11 +155,7 @@ return {
           light = "lotus",
         },
       })
-
-      -- setup must be called before loading
-      -- vim.cmd("colorscheme kanagawa")
     end,
-    -- Default options:
   },
   {
     "rcarriga/nvim-notify",
@@ -169,10 +163,21 @@ return {
       background_colour = "#000",
     },
   },
+  { "cranberry-clockworks/coal.nvim", lazy = false },
+  {
+    "bluz71/vim-nightfly-guicolors",
+    lazy = false,
+    name = "nightfly",
+    -- config = function()
+    --   require('vim-nightfly-guicolors').setup({
+    --     nightflyTransparent= true
+    --   })
+    -- end,
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "nightfly",
       styles = {
         sidebars = "transparent",
         floats = "transparent",
