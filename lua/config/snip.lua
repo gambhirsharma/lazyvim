@@ -48,7 +48,7 @@ html::after {
   content: '';
   position: absolute;
   background-repeat: no-repeat;
-  
+
   filter: blur(0);
 }
 body{
@@ -58,16 +58,17 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-} ]]){{ strict = false }}),
-  s("px", fmta([[ calc(<> *(--px));]], { i(1) })),
+} ]],{})),
+
+  s("px", fmta([[ calc(<> *var(--px));]], { i(1) })),
   s("bgred", t("background: red;")),
   s("flexCenter", fmta([[
-display: flex;
-align-items: center;
-justify-content: center;
-  ]])),
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  ]], {})),
 })
 
-ls.add_snippets("js", {
+ls.add_snippets("all", {
   s('clog', fmta([[console.log(`<>`)]], {i(1)}))
 })

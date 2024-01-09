@@ -50,7 +50,7 @@ return {
 
     set(mode, "<c-i>", M.expand_or_jump)
     set(mode, "<c-n>", M.jump_prev)
-    set(mode, "<c-l>", M.change_chuice)
+    -- set(mode, "<c-l>", M.change_chuice)
     set(normal, ",r", M.refresh_snippets)
   end,
 }
