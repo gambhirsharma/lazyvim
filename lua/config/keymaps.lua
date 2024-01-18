@@ -24,3 +24,11 @@ vim.keymap.set("n", "<leader>f", "<leader>cd", { desc = "Line Diagnostics", rema
 -- move selection in visual mode
 vim.keymap.set("v", "K", ":move '<-2<CR>gv=gv", { desc = "Move selection up" })
 vim.keymap.set("v", "J", ":move '>+1<CR>gv=gv", { desc = "Move selection down" })
+
+-- Cody Chat
+vim.keymap.set("n", "<leader>cs", "<cmd>CodyChat<CR>", {desc = "Cody Chat", remap = ture})
+vim.keymap.set("n", "<leader>ct", "<cmd>CodyToggle<CR>", {desc = "Cody Toggle", remap = ture})
+vim.keymap.set("n", "<leader>cd", ":CodyTask<Space>", {desc = "Cody Task", remap = ture})
+
+
+
