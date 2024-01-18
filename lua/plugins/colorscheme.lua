@@ -174,10 +174,28 @@ return {
     --   })
     -- end,
   },
+  -- {
+  --   dir = "~/Coding/NeoVim-Plugins-dev/vesper.nvim/",
+  --   dev = true,
+  --   lazy = false,
+  --   priority = 1000,
+  --   -- name = "vesper",
+  --   -- config = function()
+  --   --   vim.cmd([[colorscheme vesper]])
+  --   -- end,
+  -- },
+  {
+    "gambhirsharma/vesper.nvim",
+    lazy = false,
+    priority = 1000,
+    -- config = function()
+    --   vim.cmd([[colorscheme vesper]])
+    -- end,
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "nightfly",
+      colorscheme = "vesper",
       styles = {
         sidebars = "transparent",
         floats = "transparent",
