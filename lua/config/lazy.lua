@@ -10,7 +10,11 @@ require("lazy").setup({
   ui = {
     border = "rounded",
   },
-  -- opts = require("config.option"),
+  -- dev = {
+  --   path = "/Users/gambhirsharma/Coding/NeoVim-Plugins-dev/",
+  --   patterns = { "gambhir" },
+  --   fallback = false,
+  -- },
   spec = {
     -- add LazyVim and import its plugins
     {

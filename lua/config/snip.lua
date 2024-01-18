@@ -70,5 +70,6 @@ body{
 })
 
 ls.add_snippets("all", {
-  s('clog', fmta([[console.log(`<>`)]], {i(1)}))
+  s('clog', fmta([[console.log(`<>`)]], {i(1)})),
+  s('todo', t('- [ ] '))
 })

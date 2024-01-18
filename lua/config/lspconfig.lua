@@ -11,14 +11,14 @@ lspconfig.emmet_language_server.setup({
     "css",
     "eruby",
     "html",
-    "javascript",
-    "javascriptreact",
+    -- "javascript",
+    -- "javascriptreact",
     "less",
     "sass",
     "scss",
     "svelte",
     "pug",
-    "typescriptreact",
+    -- "typescriptreact",
     "vue",
   },
   -- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).
@@ -157,7 +157,7 @@ lspconfig.tailwindcss.setup({
 lspconfig.tsserver.setup({
   cmd = { "typescript-language-server", "--stdio" },
   filetypes = {
-    "html",
+    -- "html",
     "javascript",
     "javascriptreact",
     "javascript.jsx",
@@ -183,14 +183,14 @@ lspconfig.html.setup({
   cmd = { "vscode-html-language-server", "--stdio" },
   filetypes = { "html" },
   init_options = {
-  configurationSection = { "html", "css", "javascript" },
-  embeddedLanguages = {
-    css = true,
-    javascript = true
+    configurationSection = { "html", "css", "javascript" },
+    embeddedLanguages = {
+      css = true,
+      javascript = true,
+    },
+    provideFormatter = true,
   },
-  provideFormatter = true
-},
-  single_file_support = true
+  single_file_support = true,
 })
 
 -- HTMX
@@ -237,6 +237,8 @@ lspconfig.pyright.setup({
 --elixier config
 lspconfig.elixirls.setup({
   filetypes = { "elixir", "eelixir", "heex", "surface" },
+  cmd = { "elixir-ls", "--studio" },
+  single_file_support = true,
 })
 
 -- lua
