@@ -28,7 +28,10 @@ vim.keymap.set("v", "J", ":move '>+1<CR>gv=gv", { desc = "Move selection down" }
 -- Cody Chat
 vim.keymap.set("n", "<leader>cs", "<cmd>CodyChat<CR>", {desc = "Cody Chat", remap = ture})
 vim.keymap.set("n", "<leader>ct", "<cmd>CodyToggle<CR>", {desc = "Cody Toggle", remap = ture})
-vim.keymap.set("n", "<leader>cd", ":CodyTask<Space>", {desc = "Cody Task", remap = ture})
+-- vim.keymap.set("n", "<leader>cd", ":CodyTask<Space>", {desc = "Cody Task", remap = ture})
 
+
+-- Notes 
+vim.keymap.set('n', "<leader>nt", "<cmd>Telescope find_files cwd=~/Documents/Notes<CR>", {desc="Notes"})
 
 

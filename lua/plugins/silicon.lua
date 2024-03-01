@@ -1,0 +1,25 @@
+return {
+  -- "krivahtoo/silicon.nvim",
+  -- lazy = true,
+  -- cmd = "Silicon",
+  -- config = function()
+  --   require("silicon").setup({
+  --     -- font = "Fira Code Nerd Font=26",
+  --     background = "#151B25",
+  --     theme = "Monokai Extended",
+  --     line_number = true,
+  --     pad_vert = 80,
+  --     pad_horiz = 50,
+  --     output = {
+  --       clipboard = true,
+  --       path = "~/Pictures/ScreenShots/CodeSnipets/",
+  --     },
+  --     watermark = {
+  --       text = "𝕏 @gambhirsharma",
+  --     },
+  --     window_title = function()
+  --       return vim.fn.fnamemodify(vim.fn.bufname(vim.fn.bufnr()), ":~:.")
+  --     end,
+  --   })
+  -- end,
+}

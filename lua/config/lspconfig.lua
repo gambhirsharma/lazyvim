@@ -4,7 +4,6 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 local lspconfig = require("lspconfig")
 
 -- Front-End #####################################################################
-
 -- Emmet
 lspconfig.emmet_language_server.setup({
   filetypes = {
@@ -157,7 +156,7 @@ lspconfig.tailwindcss.setup({
 lspconfig.tsserver.setup({
   cmd = { "typescript-language-server", "--stdio" },
   filetypes = {
-    -- "html",
+    "html",
     "javascript",
     "javascriptreact",
     "javascript.jsx",
@@ -207,6 +206,13 @@ lspconfig.rust_analyzer.setup({
   filetypes = { "rust" },
   root_dir = lspconfig.util.root_pattern("Cargo.toml", "rust-project.json"),
   single_file_support = true,
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = {
+        allfeatures = true,
+      },
+    },
+  },
 })
 --
 

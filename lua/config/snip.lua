@@ -4,6 +4,7 @@ local t = ls.text_node
 local extras = require("luasnip.extras")
 local i = ls.insert_node
 local fmta = require("luasnip.extras.fmt").fmta
+local fmt = require("luasnip.extras.fmt").fmt
 
 ls.add_snippets("css", {
   s(
@@ -71,5 +72,6 @@ body{
 
 ls.add_snippets("all", {
   s('clog', fmta([[console.log(`<>`)]], {i(1)})),
-  s('todo', t('- [ ] '))
+  s('todo', t('- [ ] ')),
+  s('sub', fmt([[<sub>{}</sub>]], {i(1)})),
 })
