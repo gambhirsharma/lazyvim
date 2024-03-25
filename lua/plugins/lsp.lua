@@ -20,6 +20,7 @@ return {
         "codelldb",
         "clangd",
         "lua-language-server",
+        "gopls",
       },
     },
     require("mason").setup({

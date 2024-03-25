@@ -1,15 +1,15 @@
 return {
   -- tokyonight colorscheme
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    config = function()
-      require("tokyonight").setup({
-        style = "night",
-        transparent = true,
-      })
-    end,
-  },
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   lazy = false,
+  --   config = function()
+  --     require("tokyonight").setup({
+  --       style = "night",
+  --       transparent = true,
+  --     })
+  --   end,
+  -- },
 
   -- catppuccin-mocha colorscheme
   -- {
@@ -71,38 +71,38 @@ return {
   -- },
 
   -- Gruvbox colorscheme
-  {
-    "ellisonleao/gruvbox.nvim",
-    name = "gruvbox",
-    priority = 1000,
-    lazy = false,
-    config = function()
-      require("gruvbox").setup({
-        terminal_colors = true, -- add neovim terminal colors
-        undercurl = true,
-        underline = true,
-        bold = true,
-        italic = {
-          strings = true,
-          emphasis = true,
-          comments = true,
-          operators = false,
-          folds = true,
-        },
-        strikethrough = true,
-        invert_selection = false,
-        invert_signs = false,
-        invert_tabline = false,
-        invert_intend_guides = false,
-        inverse = true, -- invert background for search, diffs, statuslines and errors
-        contrast = "soft", -- can be "hard", "soft" or empty string
-        palette_overrides = {},
-        overrides = {},
-        dim_inactive = false,
-        transparent_mode = true,
-      })
-    end,
-  },
+  -- {
+  --   "ellisonleao/gruvbox.nvim",
+  --   name = "gruvbox",
+  --   priority = 1000,
+  --   lazy = false,
+  --   config = function()
+  --     require("gruvbox").setup({
+  --       terminal_colors = false, -- add neovim terminal colors
+  --       undercurl = true,
+  --       underline = true,
+  --       bold = true,
+  --       italic = {
+  --         strings = true,
+  --         emphasis = true,
+  --         comments = true,
+  --         operators = false,
+  --         folds = true,
+  --       },
+  --       strikethrough = true,
+  --       invert_selection = false,
+  --       invert_signs = false,
+  --       invert_tabline = false,
+  --       invert_intend_guides = false,
+  --       inverse = true, -- invert background for search, diffs, statuslines and errors
+  --       contrast = "hard", -- can be "hard", "soft" or empty string
+  --       palette_overrides = {},
+  --       overrides = {},
+  --       dim_inactive = false,
+  --       transparent_mode = false,
+  --     })
+  --   end,
+  -- },
   -- {
   --   "lunarvim/horizon.nvim",
   --   name = "horizon",
@@ -179,20 +179,25 @@ return {
   --   dev = true,
   --   lazy = false,
   --   priority = 1000,
-  --   -- name = "vesper",
+  --   name = "vesper",
   --   -- config = function()
   --   --   vim.cmd([[colorscheme vesper]])
   --   -- end,
   -- },
+  -- {
+  --   "gambhirsharma/vesper.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
   {
-    "gambhirsharma/vesper.nvim",
+    "Shatur/neovim-ayu",
     lazy = false,
     priority = 1000,
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "ayu",
       styles = {
         sidebars = "transparent",
         floats = "transparent",

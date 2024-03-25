@@ -2,6 +2,10 @@ return {
   "L3MON4D3/LuaSnip",
   config = function()
     local ls = require("luasnip")
+    ls.filetype_extend("typescript", { "javascript" })
+    ls.filetype_extend("typescriptreact", { "javascript" })
+    ls.filetype_extend("javascriptreact", { "javascript" })
+    require("luasnip.loaders.from_vscode").lazy_load()
     require('config.snip')
 
     local M = {}

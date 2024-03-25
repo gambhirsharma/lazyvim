@@ -1,6 +1,6 @@
 return {
   "andweeb/presence.nvim",
-  enabled = false,
+  enabled = true,
   event = "VeryLazy",
   config = function()
     -- The setup config table shows all available config options with their default values:
