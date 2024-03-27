@@ -24,8 +24,8 @@ return {
       },
     },
     require("mason").setup({
-    PATH = "prepend", -- "skip" seems to cause the spawning error
-})
+      PATH = "prepend", -- "skip" seems to cause the spawning error
+    }),
   },
   {
     "neovim/nvim-lspconfig",
@@ -48,6 +48,9 @@ return {
       vim.keymap.set("n", "<space>f", function()
         vim.lsp.buf.format({ async = true })
       end, opts)
+      vim.diagnostic.config({
+        float = { border = "rounded" },
+      })
     end,
   },
 }
