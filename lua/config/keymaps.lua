@@ -35,5 +35,6 @@ vim.keymap.set("n", "<leader>ct", "<cmd>CodyToggle<CR>", {desc = "Cody Toggle", 
 
 -- Notes 
 vim.keymap.set('n', "<leader>nt", "<cmd>Telescope find_files cwd=~/Documents/Notes<CR>", {desc="Notes"})
+vim.keymap.set('n', "<leader>dn", "<cmd>Telescope find_files cwd=~/Documents/Gambhir/Daily-Todos/<CR>", {desc="Daily Journel"})
 
 
