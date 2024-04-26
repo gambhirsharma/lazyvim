@@ -11,13 +11,13 @@ lspconfig.emmet_language_server.setup({
     "eruby",
     "html",
     -- "javascript",
-    -- "javascriptreact",
+    "javascriptreact",
     "less",
     "sass",
     "scss",
     "svelte",
     "pug",
-    -- "typescriptreact",
+    "typescriptreact",
     "vue",
   },
   -- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).
@@ -163,6 +163,7 @@ lspconfig.tsserver.setup({
     "typescript",
     "typescriptreact",
     "typescript.tsx",
+    "vue",
   },
   root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json", "jsconfig.json", ".git"),
   init_options = {

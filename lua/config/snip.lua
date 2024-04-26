@@ -85,7 +85,7 @@ ls.add_snippets("markdown", {
   s("todo", t("- [ ] ")),
   s("sub", fmt([[<sub>{}</sub>]], { i(1) })),
   s("sup", fmt([[<sup>{}</sup>]], { i(1) })),
-  s("sqr", fmta([[\sqrt{<>}]], { i(1) })),
+  s("sqr", fmta([[\sqrt{<>}]], {i(1)}))
 })
 
 ls.add_snippets("javascript", {

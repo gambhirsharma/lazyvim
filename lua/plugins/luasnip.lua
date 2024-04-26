@@ -1,12 +1,17 @@
 return {
   "L3MON4D3/LuaSnip",
+  dependencies = { "mlaursen/vim-react-snippets" },
   config = function()
     local ls = require("luasnip")
+
     ls.filetype_extend("typescript", { "javascript" })
     ls.filetype_extend("typescriptreact", { "javascript" })
     ls.filetype_extend("javascriptreact", { "javascript" })
+    ls.filetype_extend("vue", { "javascript" })
+
     require("luasnip.loaders.from_vscode").lazy_load()
-    require('config.snip')
+    require("config.snip")
+    require("vim-react-snippets").lazy_load()
 
     local M = {}
 
@@ -45,7 +50,8 @@ return {
 
     function M.refresh_snippets()
       ls.cleanup()
-      M.reload_package("config.snip") end
+      M.reload_package("config.snip")
+    end
 
     local set = vim.keymap.set
 
