@@ -29,7 +29,7 @@ return {
 		  ███████████ ███    ███ █████████ █████ █████ ████ █████  
 		 ██████  █████████████████████ ████ █████ █████ ████ ██████ 
 		                                                                       
-    		                        [ @gambhir_sharma]                        
+    		                       [ @gambhir_sharma ]                        
 		                                                                       
     ]]
     opts.section.header.val = vim.split(logo, "\n", { trimempty = true })

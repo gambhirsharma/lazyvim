@@ -21,3 +21,9 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
   pattern = "*",
   group = "AutoSave",
 })
+
+
+vim.cmd([[
+  autocmd TermOpen * setlocal nonumber norelativenumber
+]])
+

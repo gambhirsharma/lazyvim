@@ -10,9 +10,22 @@ end
 
 vim.keymap.set("i", "jj", "<esc>", { desc = "Normal mode" })
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Exit insert mode with jk" })
-vim.keymap.set({ 't' }, '<C-q>', '<C-\\><C-n>')
 
-vim.keymap.set("n", ";", ":", { desc = "Enter command mode" })
+-- terminal keymaps
+vim.keymap.set({ "t" }, "<C-q>", "<C-\\><C-n>")
+vim.keymap.set({ "t" }, "<C-h>", "<C-\\><C-n> <C-h>")
+vim.keymap.set({ "t" }, "<C-j>", "<C-\\><C-n> <C-j>")
+vim.keymap.set({ "t" }, "<C-k>", "<C-\\><C-n> <C-k>")
+vim.keymap.set({ "t" }, "<C-l>", "<C-\\><C-n> <C-l>")
+
+vim.keymap.set("n", "<C-K>", "<C-W>K", { desc = "Move to top window" })
+
+vim.keymap.set("n", "<leader>tb", ":12split | :terminal <CR>", { desc = "Open horizontal terminal split" })
+
+-- open finder 
+vim.keymap.set("n", "<leader>of", ":! open . <CR>", { desc = "Open horizontal terminal split" })
+
+-- vim.keymap.set("n", ";", ":", { desc = "Enter command mode" })
 vim.keymap.set("n", "<leader>x", "<leader>bd", { desc = "Delete current buffer", remap = true })
 -- vim.keymap.set("n", "<Tab>", "]b", { desc = "Next buffer", remap = true })
 -- vim.keymap.set("n", "<S-Tab>", "[b", { desc = "Previous buffer", remap = true })
@@ -25,7 +38,6 @@ vim.keymap.set("n", "<leader>f", "<leader>cd", { desc = "Line Diagnostics", rema
 --color scheme
 vim.keymap.set("n", "<leader>th", "<cmd>Telescope colorscheme<CR>", { desc = "Line Diagnostics", remap = true })
 
-
 -- move selection in visual mode
 vim.keymap.set("v", "K", ":move '<-2<CR>gv=gv", { desc = "Move selection up" })
 vim.keymap.set("v", "J", ":move '>+1<CR>gv=gv", { desc = "Move selection down" })
@@ -35,8 +47,11 @@ vim.keymap.set("n", "<leader>cs", "<cmd>CodyChat<CR>", { desc = "Cody Chat", rem
 vim.keymap.set("n", "<leader>ct", "<cmd>CodyToggle<CR>", { desc = "Cody Toggle", remap = ture })
 -- vim.keymap.set("n", "<leader>cd", ":CodyTask<Space>", {desc = "Cody Task", remap = ture})
 
-
 -- Notes
-vim.keymap.set('n', "<leader>nt", "<cmd>Telescope find_files cwd=~/Documents/Notes<CR>", { desc = "Notes" })
-vim.keymap.set('n', "<leader>dn", "<cmd>Telescope find_files cwd=~/Documents/Gambhir/Daily-Todos/<CR>",
-  { desc = "Daily Journel" })
+vim.keymap.set("n", "<leader>nt", "<cmd>Telescope find_files cwd=~/Documents/Notes<CR>", { desc = "Notes" })
+vim.keymap.set(
+  "n",
+  "<leader>dn",
+  "<cmd>Telescope find_files cwd=~/Documents/Gambhir/Daily-Todos/<CR>",
+  { desc = "Daily Journel" }
+)

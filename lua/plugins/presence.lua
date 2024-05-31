@@ -1,4 +1,5 @@
-return {
+return 
+  {
   "andweeb/presence.nvim",
   enabled = true,
   event = "VeryLazy",

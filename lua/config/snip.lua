@@ -67,7 +67,10 @@ ls.add_snippets("css", {
   ),
 
   s("px", fmta([[ calc(<> *var(--px));]], { i(1) })),
+
   s("bgred", t("background: red;")),
+  s('bred', t("border: 1px solid red;")),
+
   s(
     "flexCenter",
     fmta(
@@ -85,7 +88,7 @@ ls.add_snippets("markdown", {
   s("todo", t("- [ ] ")),
   s("sub", fmt([[<sub>{}</sub>]], { i(1) })),
   s("sup", fmt([[<sup>{}</sup>]], { i(1) })),
-  s("sqr", fmta([[\sqrt{<>}]], {i(1)}))
+  s("sqr", fmta([[\sqrt{<>}]], { i(1) })),
 })
 
 ls.add_snippets("javascript", {
@@ -102,3 +105,4 @@ ls.add_snippets("javascript", {
     )
   ),
 })
+
