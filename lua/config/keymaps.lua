@@ -11,15 +11,21 @@ end
 vim.keymap.set("i", "jj", "<esc>", { desc = "Normal mode" })
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Exit insert mode with jk" })
 
+vim.keymap.set("i", "<C-b>", "<ESC>^i", { desc = "Beginning of line" })
+vim.keymap.set("i", "<C-e>", "<End>", { desc = "End of line" })
+vim.keymap.set("i", "<C-h>", "<Left>", { desc = "Move left" })
+vim.keymap.set("i", "<C-l>", "<Right>", { desc = "Move right" })
+vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move down" })
+vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move up" })
+
 -- terminal keymaps
 vim.keymap.set({ "t" }, "<C-q>", "<C-\\><C-n>")
 vim.keymap.set({ "t" }, "<C-h>", "<C-\\><C-n> <C-h>")
 vim.keymap.set({ "t" }, "<C-j>", "<C-\\><C-n> <C-j>")
-vim.keymap.set({ "t" }, "<C-k>", "<C-\\><C-n> <C-k>")
+vim.keymap.set({ "t" }, "<C-k>", "<C-\\><C-n> <C-w-k>")
 vim.keymap.set({ "t" }, "<C-l>", "<C-\\><C-n> <C-l>")
 
 vim.keymap.set("n", "<C-K>", "<C-W>K", { desc = "Move to top window" })
-
 vim.keymap.set("n", "<leader>tb", ":12split | :terminal <CR>", { desc = "Open horizontal terminal split" })
 
 -- open finder 
