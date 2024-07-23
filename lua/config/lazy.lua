@@ -7,9 +7,9 @@ end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
-  ui = {
-    border = "rounded",
-  },
+  -- ui = {
+  --   border = "rounded",
+  -- },
   -- dev = {
   --   path = "/Users/gambhirsharma/Coding/NeoVim-Plugins-dev/",
   --   patterns = { "gambhir" },
@@ -41,7 +41,10 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  checker = { enabled = true }, -- automatically check for plugin updates
+  checker = { 
+    enabled = true,  -- automatically check for plugin updates
+    notify = false, -- get a notification when new updates are found
+  },
   performance = {
     rtp = {
       -- disable some rtp plugins
