@@ -69,7 +69,7 @@ ls.add_snippets("css", {
   s("px", fmta([[ calc(<> *var(--px));]], { i(1) })),
 
   s("bgred", t("background: red;")),
-  s('bred', t("border: 1px solid red;")),
+  s("bred", t("border: 1px solid red;")),
 
   s(
     "flexCenter",
@@ -105,4 +105,3 @@ ls.add_snippets("javascript", {
     )
   ),
 })
-
