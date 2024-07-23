@@ -302,7 +302,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "carbonfox",
+      colorscheme = "ayu",
       styles = {
         sidebars = "transparent",
         floats = "transparent",
