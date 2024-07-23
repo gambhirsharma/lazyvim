@@ -2,10 +2,12 @@
   "extras": [
     "lazyvim.plugins.extras.editor.harpoon2",
     "lazyvim.plugins.extras.lang.go",
+    "lazyvim.plugins.extras.lang.python",
+    "lazyvim.plugins.extras.lang.sql",
     "lazyvim.plugins.extras.lang.tailwind"
   ],
   "news": {
-    "NEWS.md": "4964",
+    "NEWS.md": "6077",
     "doc/news.txt": "13995"
   },
   "version": 6
