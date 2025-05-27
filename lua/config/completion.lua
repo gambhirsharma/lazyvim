@@ -13,17 +13,17 @@ cmp.setup {
     { name = "path" },
     { name = "buffer" },
   },
---  mapping = {
- --   ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
- --   ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
-    -- ["<C-y>"] = cmp.mapping(
-    --   cmp.mapping.confirm {
-    --     behavior = cmp.ConfirmBehavior.Insert,
-    --     select = true,
-    --   },
-    --   { "i", "c" }
-    -- ),
- --  },
+  -- mapping = {
+  --   ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+  --   ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+  --   ["<C-y>"] = cmp.mapping(
+  --     cmp.mapping.confirm {
+  --       behavior = cmp.ConfirmBehavior.Insert,
+  --       select = true,
+  --     },
+  --     { "i", "c" }
+  --   ),
+  -- },
 
   -- Enable luasnip to handle snippet expansion for nvim-cmp
   snippet = {
